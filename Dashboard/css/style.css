@@ -1,0 +1,96 @@
+body
+{
+    background-color: #eeeeee;
+}
+.inputs
+{
+    width: 20%;
+    display: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 10px #495057;
+    transition: all 2s ;
+    transform: translateX(-100%);
+    background-color: white;
+
+
+}
+.car-table
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    transition: 2s all;
+    z-index: 1;
+    transform: translateX(0%);
+}
+h4
+{
+    display: inline-block;
+}
+header
+{
+    width: 100%;
+    display: flex;
+}
+.add-del-btn
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.Add-Delete-btn
+{
+    margin-top: 10px;
+    width:130px;
+}
+@keyframes move-right
+{
+    0%
+    {
+        transform:translateX(-100%);
+    }
+    100%
+    {
+        transform:translateX(0%);
+    }
+}
+@keyframes move-table
+{
+    0%
+    {
+        transform:translateX(-12%);
+    }
+    100%
+    {
+        transform:translateX(0%);
+    }
+}
+@keyframes move-left
+{
+    0%
+    {
+        transform:translateX(0%);
+    }
+    100%
+    {
+        transform:translateX(-100%);
+    }
+}
+@keyframes stop-table
+{
+    0%
+    {
+        transform:translateX(0%);
+    }
+    100%
+    {
+        transform:translateX(-12%);
+    }
+}
+.car-img
+{
+    width: 10px;
+}
