@@ -22,13 +22,13 @@
         <div>
         <h4>Name : </h4>
         <div class=" input-group mb-3">
-            <input type="text" class="form-control INP" placeholder="Car Name" aria-label="Username" aria-describedby="basic-addon1">
+            <input onkeyup="test(this,0)"  type="text" class="form-control INP" placeholder="Car Name" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     </div>
     <div>
         <h4> price : </h4>
         <div class=" input-group mb-3">
-            <input type="number" class="form-control INP" placeholder="Car Price" aria-label="Username" aria-describedby="basic-addon1">
+            <input onkeyup="test(this,1)" type="number" class="form-control INP" placeholder="Car Price" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     </div>
 
@@ -60,7 +60,7 @@
         </div>
     </div>
         <div class="add-del-btn" >
-            <button onclick="Onclick()" id="addCar" class="btn btn-success Add-Delete-btn" >Add <i class="fa-solid fa-circle-plus "></i></button>
+            <button disabled onclick="Onclick()" id="addCar" class="btn btn-success Add-Delete-btn" >Add <i class="fa-solid fa-circle-plus "></i></button>
             <button class="btn btn-danger Add-Delete-btn" style="margin-left: 10px" onclick="close1()"> Close <i class="fa-solid fa-circle-xmark"></i></button>
         </div>
 </section>
@@ -77,7 +77,7 @@
                     </select>
                 </div>
 
-                <button class="btn btn-success Add-Delete-btn" style="height: 38px" onclick="show()">Add Car <i class="fa-solid fa-circle-plus "></i></button>
+                <button  class="btn btn-success Add-Delete-btn" style="height: 38px" onclick="show()">Add Car <i class="fa-solid fa-circle-plus "></i></button>
                 <button onclick="delete_all()" class="btn btn-danger Add-Delete-btn" style="margin-left: 10px;margin-right: 10px; height: 38px">Delete All <i class="fa-solid fa-circle-minus"></i></button>
             </div>
             <hr style="color: #5c636a">

@@ -49,6 +49,7 @@ else {
 }
 function Onclick()
 {
+    let butt = document.getElementById('addCar');
     if(button_add.innerText.includes("Add")) {
         let path = inputs[4].value.split("\\");
 
@@ -74,10 +75,14 @@ function Onclick()
         Cars[loc].car_year= inputs[3].value;
         Cars[loc].car_image = path[2];
         localStorage.setItem("Cars", JSON.stringify(Cars));
-
         Display();
         clear_inputs();
     }
+    butt.setAttribute('disabled', "");
+    inputs[0].classList.add('is-invalid');
+    inputs[0].classList.remove('is-valid');
+    inputs[1].classList.add('is-invalid');
+    inputs[1].classList.remove('is-valid');
 }
 function Display()
 {
@@ -135,6 +140,14 @@ function check()
 function edit_item(index)
 {
     show();
+    let butt = document.getElementById('addCar');
+    butt.removeAttribute('disabled');
+
+    inputs[0].classList.remove('is-invalid');
+    inputs[0].classList.add('is-valid');
+    inputs[1].classList.remove('is-invalid');
+    inputs[1].classList.add('is-valid');
+
     inputs[0].value = Cars[index].car_name;
     inputs[1].value = Cars[index].car_price;
     inputs[2].value = Cars[index].car_color;
@@ -213,7 +226,40 @@ function search1(name)
         }
         rows.innerHTML = val;
     }
-
-
 }
+function test(V,flag)
+{
+    let op = /^[A-Z][a-z]{2,7}$/;
+    let op1 = /^[0-9]{4,7}$/;
+    let butt = document.getElementById('addCar');
+    if(flag === 0)
+    {
+        if (op.test(V.value)) {
+           // butt.removeAttribute('disabled');
+            inputs[0].classList.add('is-valid');
+            inputs[0].classList.remove('is-invalid');
 
+        } else {
+            inputs[0].classList.add('is-invalid');
+            inputs[0].classList.remove('is-valid');
+            butt.setAttribute('disabled', "");
+        }
+    }
+    else if(flag === 1)
+    {
+        if (op1.test(V.value)) {
+           // butt.removeAttribute('disabled');
+            inputs[1].classList.add('is-valid');
+            inputs[1].classList.remove('is-invalid');
+
+        } else {
+            inputs[1].classList.add('is-invalid');
+            inputs[1].classList.remove('is-valid');
+            butt.setAttribute('disabled', "");
+        }
+    }
+    if(op.test(inputs[0].value) && op1.test(inputs[1].value))
+    {
+        butt.removeAttribute('disabled');
+    }
+}
